@@ -74,8 +74,8 @@ public class EventBuffer extends Thread {
   }
 
   public void fill() throws InterruptedException {
-    while (eventPool.size() < bufferSize) {
-      Thread.sleep(100);
+    if (eventPool.size() < bufferSize) {
+      Thread.sleep(500);
     }
   }
 

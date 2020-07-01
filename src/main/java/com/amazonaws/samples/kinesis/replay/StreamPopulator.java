@@ -40,7 +40,7 @@ import software.amazon.awssdk.services.s3.S3Client;
 public class StreamPopulator {
   private static final Logger LOG = LoggerFactory.getLogger(StreamPopulator.class);
 
-  private static final String DEFAULT_REGION_NAME = Regions.getCurrentRegion()==null ? "eu-west-1" : Regions.getCurrentRegion().getName();
+  private static final String DEFAULT_REGION_NAME = Regions.getCurrentRegion()==null ? "us-east-1" : Regions.getCurrentRegion().getName();
 
 
   private final String streamName;
@@ -142,7 +142,7 @@ public class StreamPopulator {
   }
 
 
-  private void populate() {
+  public void populate() {
     long statisticsBatchEventCount = 0;
     long statisticsLastOutputTimeslot = 0;
 
